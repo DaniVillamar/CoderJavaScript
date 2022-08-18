@@ -2,7 +2,8 @@
 const carrito = document.querySelector('#carrito');
 const listaCursos = document.querySelector('#lista-cursos');
 const contenedorCarrito = document.querySelector('#lista-carrito tbody');
-const vaciarCarritoBtn = document.querySelector('#vaciar-carrito'); 
+const vaciarCarritoBtn = document.querySelector('#vaciar-carrito');
+const pagarCarritoBtn = document.querySelector('#pagar-carrito');
 let articulosCarrito = [];
 
 // Listeners
@@ -17,6 +18,9 @@ function cargarEventListeners() {
 
      // Al Vaciar el carrito
      vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+
+     // Al Pagar el carrito
+     vaciarCarritoBtn.addEventListener('click', pagarCarrito);
 
 
      // NUEVO: Contenido cargado
@@ -128,4 +132,8 @@ function vaciarCarrito() {
      while(contenedorCarrito.firstChild) {
           contenedorCarrito.removeChild(contenedorCarrito.firstChild);
       }
+}
+
+function pagarCarrito(){
+     swal("Good job!", "You clicked the button!", "success")
 }
